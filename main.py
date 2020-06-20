@@ -48,7 +48,7 @@ profile_input=int(input("Select profile number to brute force: \n"))
 
 # print(profile_names)
 isPresent = len(browser.find_elements_by_class_name('account-dropdown-button')) > 0
-print(isPresent)
+# print(isPresent)
 profiles[profile_input].click()
 inputs=browser.find_elements_by_class_name('pin-number-input')
 testuserst=int(input("Select start number 0 to 9998: "))
