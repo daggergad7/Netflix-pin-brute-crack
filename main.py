@@ -14,14 +14,15 @@ browser = webdriver.Chrome('chromedriver.exe')
 browser.get('https://www.netflix.com/login')
 # print(browser.get_cookies())
 
-
-
-browser.delete_all_cookies()
-cookies = pickle.load(open("cookies.pkl", "rb"))
-for cookie in cookies:
-    if 'sameSite' in cookie:
-         del cookie['sameSite']
-    browser.add_cookie(cookie)
+print("login or use cookies")
+cookie_use=input("press y to use cookies")
+if(cookie_use==y):
+    browser.delete_all_cookies()
+    cookies = pickle.load(open("cookies.pkl", "rb"))
+    for cookie in cookies:
+        if 'sameSite' in cookie:
+            del cookie['sameSite']
+        browser.add_cookie(cookie)
 
 # print(browser.get_cookies())
 profile_names=[]
