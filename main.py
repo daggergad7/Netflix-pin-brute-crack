@@ -1,5 +1,4 @@
 import pickle
-import requests
 import json
 from selenium import webdriver
 try:
