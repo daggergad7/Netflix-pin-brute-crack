@@ -3,7 +3,7 @@ Brute forces the pin on profile lock in netflix, uses selenium.
 ## Demo:
 ![preview](https://raw.githubusercontent.com/daggergad7/Netflix-pin-brute-crack/master/img/preview.gif)
 
-## Requiremnets:
+## Requirements:
 - selenium
 - pickle (if it is not installed already)
 - json (if it is not installed already)
