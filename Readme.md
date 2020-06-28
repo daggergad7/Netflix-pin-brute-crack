@@ -5,8 +5,8 @@ Brute forces the pin on profile lock in netflix, uses selenium.
 
 ## Requiremnets:
 - selenium
-- pickle
-- json
+- pickle (if it is not installed already)
+- json (if it is not installed already)
 
 <b>Install with:</b><br>
 `pip install selenium pickle json`
