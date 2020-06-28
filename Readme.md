@@ -1,5 +1,6 @@
 # Netflix-pin-brute-crack
-Brute forces the pin on profile lock in netflix, uses selenium.
+Brute forces pin on any website, uses selenium.
+This script is configured to brute force the 4 digit PIN on Netflix profile lock.
 ## Demo:
 ![preview](https://raw.githubusercontent.com/daggergad7/Netflix-pin-brute-crack/master/img/preview.gif)
 
