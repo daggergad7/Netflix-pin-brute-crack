@@ -10,7 +10,7 @@ This script is configured to brute force the 4 digit PIN on Netflix profile lock
 - json (if it is not installed already)
 
 <b>Install with:</b><br>
-`pip install selenium pickle json`
+`pip install selenium` or `pip install selenium pickle json`
 
 <b>Run Script with:</b><br>
 `python main.py`
