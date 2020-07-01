@@ -5,6 +5,7 @@ This script is configured to brute force the 4 digit PIN on Netflix profile lock
 ![preview](https://raw.githubusercontent.com/daggergad7/Netflix-pin-brute-crack/master/img/preview.gif)
 
 ## Requirements:
+- chrome (newest version)
 - selenium
 - pickle (if it is not installed already)
 - json (if it is not installed already)
